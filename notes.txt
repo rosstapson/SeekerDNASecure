@@ -1,0 +1,31 @@
+initial state:
+
+{
+assetList: [],
+imagesForAsset: [],
+assetInQuestion: null,
+loadingAssets: false,
+loadingImages: false,
+checkingToken: false,
+isAuthenticated: false,
+error: null
+}
+
+
+actions:
+
+GET_ASSETS
+GET_ASSETS_SUCCESS
+GET_ASSETS_FAILURE
+
+GET_IMAGES
+GET_IMAGES_SUCCESS
+GET_IMAGES_FAILURE
+
+GET_ACCOUNT_DETAILS
+GET_ACCOUNT_DETAILS_SUCCESS
+GET_ACCOUNT_DETAILS_FAILURE
+
+CHECK_TOKEN
+CHECK_TOKEN_SUCCESS
+CHECK_TOKEN_FAILURE
