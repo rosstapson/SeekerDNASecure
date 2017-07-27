@@ -8,15 +8,21 @@ const Api = {
   async getRandomQuote() {
    
     const url = 'http://api.icndb.com/jokes/random';
-    console.log("url: " + url);
+    let config = {
+            method: 'get',
+            headers: {
+                'content-type': 'application/json'                
+            }
+        }
+
+    let response = await fetch(url, config);
     
-    return fetch(url).then( resp => {
-      let json = resp.json();
-      if (resp.ok) {
-        return json
+    if (response.status >= 200 && response.status < 300) {       
+        let quote = await response.json();   
+        return quote;        
+      } else {        
+        throw new Error(response.errorMessage);
       }
-      return json.then(err => {throw err});
-    }).then( json => json.results );
   
   },
   async getUser(username, token) {
